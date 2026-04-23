@@ -13,6 +13,16 @@ spring:
           clone-on-start: true
           force-pull: true
 
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+    prefer-ip-address: false
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_URL1:localhost}:8761/eureka/
+
 management:
   endpoints:
     web:
