@@ -8,10 +8,13 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/F1NLEARN/config-server
+          uri: ${CONFIG_GIT_URI:https://github.com/F1NLEARN/configs}
           default-label: main
           clone-on-start: true
           force-pull: true
+          search-paths: common,{application}
+        native:
+          search-locations: file:/configs/common,file:/configs/{application}
 
 eureka:
   instance:
