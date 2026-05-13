@@ -14,7 +14,7 @@ spring:
           force-pull: true
           search-paths: common,{application}
         native:
-          search-locations: file:/configs/common,file:/configs/{application}
+          search-locations: file:${CONFIG_LOCAL_REPO_PATH:/configs}/common,file:${CONFIG_LOCAL_REPO_PATH:/configs}/{application}
 
 eureka:
   instance:
